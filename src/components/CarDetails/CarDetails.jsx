@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCarDetails } from "../../services/carDetails";
 import s from "./CarDetails.module.css";
-import Sprite from "/Sprite/Sprite";
 import CommentForm from "../CommentForm/CommentForm";
 
 const CarDetails = () => {
@@ -45,7 +44,9 @@ const CarDetails = () => {
             <h3 className={s.rental_title}>Rental Conditions: </h3>
             {car.rentalConditions.map((condition, index) => (
               <ul className={s.condition_cont}>
-                <Sprite name="icon-apply" width={16} height={16} />
+                <svg width="16" height="16">
+                  <use xlinkHref="/public/sprite/symbol-defs.svg#icon-apply"></use>
+                </svg>
                 <li className={s.car_conditions} key={index}>
                   {condition}
                 </li>
@@ -55,19 +56,27 @@ const CarDetails = () => {
           <h3 className={s.car_specifications}>Car Specifications:</h3>
           <ul className={s.car_list}>
             <li className={s.car_item}>
-              <Sprite name="icon-calendar" width={16} height={16} />
+              <svg width="16" height="16">
+                <use xlinkHref="/public/sprite/symbol-defs.svg#icon-calendar"></use>
+              </svg>
               <p>Year: {car.year}</p>
             </li>
             <li className={s.car_item}>
-              <Sprite name="icon-car" width={16} height={16} />
+              <svg width="16" height="16">
+                <use xlinkHref="/public/sprite/symbol-defs.svg#icon-car"></use>
+              </svg>
               <p>Type: {car.type}</p>
             </li>
             <li className={s.car_item}>
-              <Sprite name="icon-gas" width={16} height={16} />
+              <svg width="16" height="16">
+                <use xlinkHref="/public/sprite/symbol-defs.svg#icon-gas"></use>
+              </svg>
               <p>Fuel Consumption: {car.fuelConsumption}</p>
             </li>
             <li className={s.car_item}>
-              <Sprite name="icon-settings" width={16} height={16} />
+              <svg width="16" height="16">
+                <use xlinkHref="/public/sprite/symbol-defs.svg#icon-settings"></use>
+              </svg>
               <p>Engine Size: {car.engineSize}</p>
             </li>
           </ul>
@@ -75,7 +84,9 @@ const CarDetails = () => {
             <h3 className={s.acces_title}>Accessories:</h3>
             {car.accessories.map((accessories, index) => (
               <ul className={s.acces_cont}>
-                <Sprite name="icon-apply" width={16} height={16} />
+                <svg width="16" height="16">
+                  <use xlinkHref="/public/sprite/symbol-defs.svg#icon-apply"></use>
+                </svg>
                 <li className={s.accessories} key={index}>
                   {accessories}
                 </li>
