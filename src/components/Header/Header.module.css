@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f2f4f7;
+  padding: 24px 120px;
+  border-bottom: 1px solid #f2f4f7;
+}
+
+.logo {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.logo_car {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #3470ff;
+}
+
+.container_buttons {
+  display: flex;
+  gap: 32px;
+}
+
+.button {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  color: #101828;
+  background-color: inherit;
+}
+
+.active {
+  color: #0b44cd;
+  font-weight: bold;
+  text-decoration: underline;
+}

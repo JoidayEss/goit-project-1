@@ -1,0 +1,96 @@
+.form_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #dadde1;
+  border-radius: 10px;
+  padding: 32px;
+  background-color: #fff;
+  margin-bottom: 100px;
+}
+
+.form_title {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #101828;
+  margin-bottom: 8px;
+}
+
+.form_paragraph {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #8d929a;
+  margin-bottom: 24px;
+}
+
+.form_place {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  border-radius: 12px;
+  padding: 12px 20px;
+  background-color: #f7f7f7;
+  border: none;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: black;
+  width: 576px;
+  height: 48px;
+}
+
+.field::placeholder {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #8d929a;
+}
+
+.field_area {
+  border-radius: 12px;
+  padding: 12px 20px 56px 20px;
+  background-color: #f7f7f7;
+  border: none;
+  margin-bottom: 24px;
+}
+
+.field_area::placeholder {
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #8d929a;
+}
+
+.button_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button {
+  max-width: 156px;
+  text-align: center;
+  border-radius: 12px;
+  padding: 12px 51px;
+  background-color: #3470ff;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #fff;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.button:hover {
+  background-color: #0b44cd;
+}
