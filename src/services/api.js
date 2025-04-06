@@ -12,9 +12,9 @@ export const getCars = async (filters = {}, page = 1) => {
     };
 
     if (brand) params.brand = brand;
-    if (rentalPrice) params.rentalPrice = rentalPrice;
-    if (minMileage) params.mileageFrom = minMileage;
-    if (maxMileage) params.mileageTo = maxMileage;
+    if (rentalPrice) params.rentalPrice = Number(rentalPrice);
+    if (minMileage) params.minMileage = Number(minMileage);
+    if (maxMileage) params.maxMileage = Number(maxMileage);
 
     const response = await axios.get(`${BASE_URL}/cars`, { params });
 

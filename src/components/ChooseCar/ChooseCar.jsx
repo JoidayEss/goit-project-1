@@ -8,9 +8,9 @@ import { fetchCars, setFilters } from "../../services/redux/carsSlice.js";
 const ChooseCar = () => {
   const [brands, setBrands] = useState([]);
   const [brand, setBrand] = useState("");
-  const [price, setPrice] = useState("");
-  const [mileageFrom, setMileageFrom] = useState("");
-  const [mileageTo, setMileageTo] = useState("");
+  const [rentalPrice, setPrice] = useState(0);
+  const [minMileage, setMinMileage] = useState("");
+  const [maxMileage, setMaxMileage] = useState("");
   const [isBrandOpen, setIsBrandOpen] = useState(false);
   const [isPriceOpen, setIsPriceOpen] = useState(false);
 
@@ -32,9 +32,9 @@ const ChooseCar = () => {
   const handleSearch = () => {
     const filters = {
       brand,
-      price,
-      mileageFrom,
-      mileageTo,
+      rentalPrice,
+      minMileage,
+      maxMileage,
     };
     dispatch(setFilters(filters));
     dispatch(fetchCars(filters));
@@ -84,7 +84,7 @@ const ChooseCar = () => {
           </div>
           <select
             className={s.select}
-            value={price}
+            value={rentalPrice}
             onChange={(e) => setPrice(e.target.value)}
             onFocus={() => setIsPriceOpen(true)}
             onBlur={() => setIsPriceOpen(false)}
@@ -105,16 +105,16 @@ const ChooseCar = () => {
               type="number"
               className={s.input}
               placeholder="From"
-              value={mileageFrom}
-              onChange={(e) => setMileageFrom(e.target.value)}
+              value={minMileage}
+              onChange={(e) => setMinMileage(e.target.value)}
             />
             <span className={s.divider}></span>
             <input
               type="number"
               className={s.input_right}
               placeholder="To"
-              value={mileageTo}
-              onChange={(e) => setMileageTo(e.target.value)}
+              value={maxMileage}
+              onChange={(e) => setMaxMileage(e.target.value)}
             />
             <button className={s.button} onClick={handleSearch}>
               Search

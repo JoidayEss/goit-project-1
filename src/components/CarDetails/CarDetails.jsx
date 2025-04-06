@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchCarDetails } from "../../services/carDetails";
 import s from "./CarDetails.module.css";
-import Sprite from "../Sprite/Sprite";
+import Sprite from "/Sprite/Sprite";
 import CommentForm from "../CommentForm/CommentForm";
 
 const CarDetails = () => {
