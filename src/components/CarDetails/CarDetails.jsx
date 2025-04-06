@@ -45,7 +45,7 @@ const CarDetails = () => {
             {car.rentalConditions.map((condition, index) => (
               <ul className={s.condition_cont}>
                 <svg width="16" height="16">
-                  <use xlinkHref="/public/sprite/symbol-defs.svg#icon-apply"></use>
+                  <use xlinkHref="/sprite/symbol-defs.svg#icon-apply"></use>
                 </svg>
                 <li className={s.car_conditions} key={index}>
                   {condition}
@@ -57,25 +57,25 @@ const CarDetails = () => {
           <ul className={s.car_list}>
             <li className={s.car_item}>
               <svg width="16" height="16">
-                <use xlinkHref="/public/sprite/symbol-defs.svg#icon-calendar"></use>
+                <use xlinkHref="/sprite/symbol-defs.svg#icon-calendar"></use>
               </svg>
               <p>Year: {car.year}</p>
             </li>
             <li className={s.car_item}>
               <svg width="16" height="16">
-                <use xlinkHref="/public/sprite/symbol-defs.svg#icon-car"></use>
+                <use xlinkHref="/sprite/symbol-defs.svg#icon-car"></use>
               </svg>
               <p>Type: {car.type}</p>
             </li>
             <li className={s.car_item}>
               <svg width="16" height="16">
-                <use xlinkHref="/public/sprite/symbol-defs.svg#icon-gas"></use>
+                <use xlinkHref="/sprite/symbol-defs.svg#icon-gas"></use>
               </svg>
               <p>Fuel Consumption: {car.fuelConsumption}</p>
             </li>
             <li className={s.car_item}>
               <svg width="16" height="16">
-                <use xlinkHref="/public/sprite/symbol-defs.svg#icon-settings"></use>
+                <use xlinkHref="/sprite/symbol-defs.svg#icon-settings"></use>
               </svg>
               <p>Engine Size: {car.engineSize}</p>
             </li>
@@ -85,7 +85,7 @@ const CarDetails = () => {
             {car.accessories.map((accessories, index) => (
               <ul className={s.acces_cont}>
                 <svg width="16" height="16">
-                  <use xlinkHref="/public/sprite/symbol-defs.svg#icon-apply"></use>
+                  <use xlinkHref="/sprite/symbol-defs.svg#icon-apply"></use>
                 </svg>
                 <li className={s.accessories} key={index}>
                   {accessories}
