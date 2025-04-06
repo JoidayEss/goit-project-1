@@ -18,6 +18,7 @@
 }
 
 .img_car {
+  position: relative;
   border-radius: 14px;
   margin-bottom: 16px;
   min-width: 276px;
@@ -74,4 +75,22 @@
   font-size: 16px;
   line-height: 1.25;
   color: #101828;
+}
+
+.favorite_btn svg {
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 240px;
+  z-index: 9999999999;
+  fill: transparent;
+  stroke: black;
+  transition: fill 0.3s ease;
+}
+
+.favorite_btn.active svg {
+  fill: #3470ff;
+}
+
+.favorite_btn:hover svg {
+  transform: scale(1.1);
 }

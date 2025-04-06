@@ -13,6 +13,7 @@ export const fetchCars = createAsyncThunk(
   }
 );
 
+const savedFavorites = localStorage.getItem("favorites");
 const carsSlice = createSlice({
   name: "cars",
   initialState: {
@@ -23,7 +24,7 @@ const carsSlice = createSlice({
       minMileage: "",
       maxMileage: "",
     },
-    favorites: [],
+    favorites: savedFavorites ? JSON.parse(savedFavorites) : [],
     loading: false,
     error: null,
   },
@@ -32,12 +33,19 @@ const carsSlice = createSlice({
       state.filters = action.payload;
     },
     addToFavorites: (state, action) => {
-      state.favorites.push(action.payload);
+      const exists = state.favorites.find(
+        (car) => car.id === action.payload.id
+      );
+      if (!exists) {
+        state.favorites.push(action.payload);
+        localStorage.setItem("favorites", JSON.stringify(state.favorites));
+      }
     },
     removeFromFavorites: (state, action) => {
       state.favorites = state.favorites.filter(
         (car) => car.id !== action.payload
       );
+      localStorage.setItem("favorites", JSON.stringify(state.favorites));
     },
   },
   extraReducers: (builder) => {

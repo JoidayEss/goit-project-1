@@ -1,13 +1,31 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import s from "./CarList.module.css";
 import ChooseCar from "../ChooseCar/ChooseCar";
 import { getCars } from "../../services/api";
 import LoadMore from "../LoadMore/LoadMore.jsx";
+import {
+  addToFavorites,
+  removeFromFavorites,
+} from "../../services/redux/carsSlice.js";
+import clsx from "clsx";
 
 const CarList = () => {
   const { filters } = useSelector((state) => state.cars);
+  const dispatch = useDispatch();
+
+  const favorites = useSelector((state) => state.cars.favorites);
+
+  const isFavorite = (carId) => favorites.some((car) => car.id === carId);
+
+  const toggleFavorite = (car) => {
+    if (isFavorite(car.id)) {
+      dispatch(removeFromFavorites(car.id));
+    } else {
+      dispatch(addToFavorites(car));
+    }
+  };
 
   const [cars, setCars] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -76,12 +94,34 @@ const CarList = () => {
           <ul className={s.cars_container} ref={carListRef}>
             {cars.map((car) => (
               <li className={s.cars} key={car.id}>
+                <button
+                  className={clsx(s.favorite_btn, {
+                    [s.active]: isFavorite(car.id),
+                  })}
+                  onClick={() => toggleFavorite(car)}
+                  title={
+                    isFavorite(car.id)
+                      ? "Видалити з обраного"
+                      : "Додати до обраного"
+                  }
+                >
+                  <svg width="20" height="20">
+                    <use
+                      xlinkHref={
+                        isFavorite(car.id)
+                          ? "/sprite/symbol-defs.svg#icon-Vector-2"
+                          : "/sprite/symbol-defs.svg#icon-Vector-2"
+                      }
+                    ></use>
+                  </svg>
+                </button>
                 <img
                   src={car.img}
                   alt={car.model}
                   width="250"
                   className={s.img_car}
                 />
+
                 <div className={s.container_price}>
                   <h3 className={s.car_title}>
                     {car.brand} <span className={s.car_model}>{car.model}</span>{" "}
